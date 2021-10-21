@@ -50,9 +50,7 @@ public class DLinkList<E> {
      */
     public void removeFirst() {
         // the old way
-        if (head == null) {
-            throw new IllegalStateException("THE LIST IS EMPTY :/");
-        } else if (head.next == null) {
+        if (head == null || head.next == null) {
             head = null;
         } else {
             head = head.next;
@@ -90,9 +88,7 @@ public class DLinkList<E> {
      * @return
      */
     public void removeLast() {
-        if (head == null) {
-            throw new IllegalStateException("THE LIST IS EMPTY :/");
-        } else if (head.next == null) {
+        if (head == null || head.next == null) {
             head = null;
         } else {
             Node<E> tmp = head;
