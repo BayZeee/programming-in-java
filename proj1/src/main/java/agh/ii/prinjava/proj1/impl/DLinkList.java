@@ -86,58 +86,6 @@ public class DLinkList<E> {
         }
 
     }
-
-    /**
-     *
-     * brows through the list with tmp until the tmp elem point on null value,
-     * then return data of these elem
-     * @return
-     */
-    public E returnLastElem() {
-        if (head == null) {throw new IllegalStateException("THE LIST IS EMPTY :/");}
-
-        else {
-            Node<E> tmp = head;
-            while (tmp.next != null) {
-                tmp = tmp.next;
-            }
-            E dataOfElem = tmp.elem;
-            return dataOfElem;
-        }
-    }
-
-    public E returnFirstElem() {
-        if (head == null) { throw new IllegalStateException("THE LIST IS EMPTY :/"); }
-
-        else {
-            E dataOfElem = head.elem;
-            return dataOfElem;
-        }
-    }
-
-    public int countElems(){
-        Node<E> tmp = head;
-        int counter = 0;
-        if (head == null) {return counter;}
-        else {
-            counter++;
-            while (tmp.next != null) {
-                counter++;
-                tmp = tmp.next;
-            }
-            return counter;
-        }
-    }
-    @Override
-    public String toString() {
-        Node tmp = head;
-        System.out.println("DLinkList{");
-        while (tmp != null) {
-            System.out.println(tmp.elem);
-            tmp = tmp.next;
-        }
-        return ("}");
-    }
 }
 
 

@@ -11,13 +11,6 @@ public interface MyStack<E> {
 
 
     /**
-     * pop & push are main functions of MyStack.java
-     * @param x
-     */
-
-
-
-    /**
      * remove the last element from the stack and returns its value.
      *
      * @return last element of the stack
@@ -32,15 +25,6 @@ public interface MyStack<E> {
      * @see MyStackDLLBImpl#push(Object)
      * */
     void push(E x);
-
-
-
-
-
-
-    /**
-     * numOfEelems(), peek() and isempty() are used in the test class
-     */
 
 
     /**

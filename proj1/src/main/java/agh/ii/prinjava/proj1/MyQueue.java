@@ -8,11 +8,6 @@ import agh.ii.prinjava.proj1.impl.MyQueueDLLBImpl;
  * */
 public interface MyQueue<E> {
 
-    /**
-     * enqueue & dequeue are main functions of MyQueue.java
-     * @param x
-     */
-
 
     /**
      * Queuing an item in a queue means adding it in the last place. It is in relation to the First in - first out basis.
@@ -32,11 +27,6 @@ public interface MyQueue<E> {
 
 
 
-
-
-    /**
-     * numOfEelems(), peek() and isempty() are used in the test class
-     */
 
     /**
      * numOfElems count the nb of elem in the queue
