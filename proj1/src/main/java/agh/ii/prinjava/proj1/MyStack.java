@@ -3,7 +3,6 @@ package agh.ii.prinjava.proj1;
 import agh.ii.prinjava.proj1.impl.DLinkList;
 import agh.ii.prinjava.proj1.impl.MyStackDLLBImpl;
 
-
 /**
  * A Stack works in the First In - Last Out principle.
  * */
@@ -14,7 +13,6 @@ public interface MyStack<E> {
      * remove the last element from the stack and returns its value.
      *
      * @return last element of the stack
-     * @see MyStackDLLBImpl#pop()
      * */
     void pop();
 
@@ -22,9 +20,11 @@ public interface MyStack<E> {
      * adding an element at the end of the stack
      *
      * @param x element to add at the end of the stack
-     * @see MyStackDLLBImpl#push(Object)
      * */
     void push(E x);
+
+
+
 
 
     /**
@@ -38,7 +38,6 @@ public interface MyStack<E> {
     /**
      * numOfElems counts the number of elements in the stack
      * @return number of elements in the stack
-     * @see MyQueueDLLBImpl#numOfElems()
      * */
     int numOfElems();
 
@@ -47,7 +46,6 @@ public interface MyStack<E> {
      * take the first element's value in the queue but doesn't delete it
      *
      * @return The value of the first element of the Queue
-     * @see MyQueueDLLBImpl#peek()
      * */
     E peek();
 

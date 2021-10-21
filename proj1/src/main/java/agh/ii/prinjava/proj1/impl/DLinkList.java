@@ -25,7 +25,6 @@ public class DLinkList<E> {
     }
 
     /**
-     *
      * add an element at the beginning of the linked list by creating a new node
      * (so this node is the new head, same is the list is empty)
      * then, link this new node with the previous head
@@ -44,7 +43,6 @@ public class DLinkList<E> {
 
 
     /**
-     *
      * nothing happens if the list is empty
      * if there is one element in the list, the head Nod's new value is null
      * if the list contains more than one element,
@@ -52,8 +50,9 @@ public class DLinkList<E> {
      */
     public void removeFirst() {
         // the old way
-        if (head == null) { throw new IllegalStateException("THE LIST IS EMPTY :/"); }
-        else if (head.next == null) {
+        if (head == null) {
+            throw new IllegalStateException("THE LIST IS EMPTY :/");
+        } else if (head.next == null) {
             head = null;
         } else {
             head = head.next;
@@ -63,19 +62,37 @@ public class DLinkList<E> {
 
     /**
      *
-     *
+     * @param elem
+     */
+    public void addLast(E elem){
+        Node<E> newNode = new Node<>(elem);
+        if (head == null) {
+            head = newNode;
+        }else{
+            Node<E> temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            newNode.prev = temp;
+            temp.next = newNode;
+        }
+    }
+
+
+    /**
      * nothing happens if list is empty
      * if one elem in the list,  head Node's new value is null
      * if more than one elem in the list, we browse the lilst
      * with a temp element until we find the last elem
      * then we delete the link between these two elems and return the value of the new last ele
      * returning the data is for have a test easier to understand
+     *
      * @return
      */
     public void removeLast() {
-        if (head == null) {throw new IllegalStateException("THE LIST IS EMPTY :/");}
-
-        else if (head.next == null) {
+        if (head == null) {
+            throw new IllegalStateException("THE LIST IS EMPTY :/");
+        } else if (head.next == null) {
             head = null;
         } else {
             Node<E> tmp = head;
@@ -84,8 +101,31 @@ public class DLinkList<E> {
             }
             tmp.next = null;
         }
+    }
 
+    /**
+     * @return size of the linked list
+     */
+    public int getSize() {
+        if (this.head == null) return 0;
+        int size = 0;
+        for (Node<E> node = head; node != null; node = node.next) {
+            size++;
+        }return size;
+    }
+
+
+    /**
+     *
+     * @param index
+     * @return
+     */
+    public E search(int index) {
+        Node<E> target = head;
+        for (int i = 0; i < index; i++) {
+            target = target.next;
+        }
+        return target.elem;
     }
 }
-
 

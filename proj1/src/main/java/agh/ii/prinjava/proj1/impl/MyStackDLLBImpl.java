@@ -5,23 +5,38 @@ import agh.ii.prinjava.proj1.MyStack;
 public class MyStackDLLBImpl<E> implements MyStack<E> {
     private DLinkList<E> elems;
 
-    @Override
-    public E pop() {
-        throw new IllegalStateException("To be implemented");
-    }
 
+    /** add an element at the last place.
+     *
+     * @param x element to add at the end of the stack
+     */
     @Override
-    public void push(E x) {
-        throw new IllegalStateException("To be implemented");
-    }
+    public void push(E x) { this.elems.addFirst(x); }
 
+    /**
+     * remove the last element of the stack
+     * and return its value.
+     *
+     * @return the last element of the stack
+     */
+    @Override
+    public void pop() { elems.removeFirst();}
+
+    /**
+     *
+     * @return number of elem in the queue using getSize()
+     */
     @Override
     public int numOfElems() {
-        throw new IllegalStateException("To be implemented");
+        return this.elems.getSize();
     }
 
+    /**
+     *
+     * @return value of the first element in the queue using search()
+     */
     @Override
     public E peek() {
-        throw new IllegalStateException("To be implemented");
+        return this.elems.search(0);
     }
 }

@@ -5,24 +5,41 @@ import agh.ii.prinjava.proj1.MyQueue;
 public class MyQueueDLLBImpl<E> implements MyQueue<E> {
     private DLinkList<E> elems;
 
+
+    /**
+     * add the element at the end of the queue
+     * @param x add the element at the end
+     *  * */
     @Override
-    public void enqueue(E x) {
-        throw new IllegalStateException("To be implemented");
-    }
+    public void enqueue(E x) {this.elems.addFirst(x);}
 
+    /**
+     * remove the first element of the queue, then returns its value.
+     *
+     * @return first element of the queue
+     * */
     @Override
-    public E dequeue() {
-        throw new IllegalStateException("To be implemented");
-    }
+    public void dequeue() { elems.removeLast();}
 
 
+    /**
+     *
+     * @return number of elem in the queue using getSize()
+     */
     @Override
     public int numOfElems() {
-        return 0;
+        return this.elems.getSize();
     }
 
+    /**
+     *
+     * @return value of the first element in the queue using search()
+     */
     @Override
     public E peek() {
-        throw new IllegalStateException("To be implemented");
+        return this.elems.search(0);
     }
+
+
+
 }
